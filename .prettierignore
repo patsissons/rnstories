@@ -1,0 +1,4 @@
+*.json
+*.md
+/build
+/node_modules

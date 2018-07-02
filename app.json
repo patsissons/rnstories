@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "React Native Stories",
+    "description": "React Native Stories",
+    "slug": "rnstories",
+    "scheme": "rnstories",
+    "privacy": "public",
+    "sdkVersion": "27.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "primaryColor": "#ffffff",
+    "icon": "./assets/app.png",
+    "splash": {
+      "image": "./assets/loading.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "loading": {
+      "icon": "./assets/loading.png",
+      "hideExponentText": false
+    },
+    "notification": {
+      "icon": "./assets/app.png"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "packagerOpts": {
+      "sourceExts": [
+        "ts",
+        "tsx"
+      ],
+      "transformer": "node_modules/react-native-typescript-transformer/index.js"
+    },
+    "ios": {
+      "bundleIdentifier": "com.rnstories",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.rnstories"
+    }
+  }
+}

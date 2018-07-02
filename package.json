@@ -1,0 +1,141 @@
+{
+  "name": "rnstories",
+  "version": "0.1.0",
+  "description": "React Native Stories",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "exp start",
+    "test": "yarn lint && yarn validate --project tsconfig.prod.json && yarn jest",
+    "postinstall": "yarn rnd:install",
+    "rnd:install": "rndebugger-open --expo",
+    "lint": "yarn lint:ts",
+    "lint:ts": "tslint --format verbose ./src/**/*.ts ./src/**/*.tsx ./test/**/*.ts ./test/**/*.tsx",
+    "lint:ts:prettier": "tslint --format verbose --config tslint.prettier.json ./src/**/*.ts ./src/**/*.tsx",
+    "validate": "tsc --noEmit --skipLibCheck",
+    "pretty": "prettier --write ./src/**/*.ts ./src/**/*.tsx ./test/**/*.ts ./**/*.js",
+    "watch": "yarn watch:jest",
+    "watch:jest": "jest --watch",
+    "android": "exp android",
+    "ios": "exp ios",
+    "storybook": "yarn storybook:start",
+    "storybook:start": "storybook start --port 9001 --skip-packager",
+    "storybook:android": "adb reverse tcp:9001 tcp:9001"
+  },
+  "dependencies": {
+    "expo": "^27.0.0",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
+    "react-native-elements": "^1.0.0-beta",
+    "tslib": "^1.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.0.0",
+    "@storybook/addon-knobs": "^3.0.0",
+    "@storybook/addon-links": "^3.0.0",
+    "@storybook/addon-options": "^3.0.0",
+    "@storybook/addons": "^3.0.0",
+    "@storybook/cli": "^3.0.0",
+    "@storybook/react-native": "^3.0.0",
+    "@types/enzyme": "^3.0.0",
+    "@types/enzyme-adapter-react-16": "^1.0.0",
+    "@types/expo": "^27.0.0",
+    "@types/jest": "^22.0.0",
+    "@types/node": "^9.0.0",
+    "@types/react": "^16.0.0",
+    "@types/react-native": "^0.55.0",
+    "@types/react-native-vector-icons": "^4.0.0",
+    "@types/storybook__addon-actions": "^3.0.0",
+    "@types/storybook__addon-knobs": "^3.0.0",
+    "@types/storybook__addon-links": "^3.0.0",
+    "@types/storybook__addon-options": "^3.0.0",
+    "@types/storybook__react": "^3.0.0",
+    "babel-core": "^6.0.0",
+    "babel-plugin-dotenv-import": "^1.0.0",
+    "babel-runtime": "^6.0.0",
+    "coveralls": "^3.0.0",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
+    "eslint": "^4.0.0",
+    "exp": "^55.0.0",
+    "jest": "^23.0.0",
+    "jest-expo": "^27.0.0",
+    "prettier": "^1.0.0",
+    "react-dom": "16.3.1",
+    "react-native-debugger-open": "^0.3.0",
+    "react-native-typescript-transformer": "^1.0.0",
+    "ts-jest": "^22.0.0",
+    "tslint": "^5.0.0",
+    "tslint-config-unional": "^0.9.0",
+    "typescript": "^2.0.0",
+    "yarn": "^1.0.0"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-expo"
+    ],
+    "plugins": [
+      [
+        "dotenv-import",
+        {
+          "allowUndefined": true
+        }
+      ]
+    ],
+    "env": {
+      "development": {
+        "plugins": [
+          "transform-react-jsx-source"
+        ]
+      }
+    }
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "cacheDirectory": "./.cache",
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.test.json"
+      },
+      "__TEST__": true
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>test/setup.ts",
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation))"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/utils/env.js"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleDirectories": [
+      "node_modules",
+      "."
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "ios.ts",
+      "ios.tsx",
+      "android.ts",
+      "android.tsx",
+      "web.ts",
+      "web.tsx"
+    ]
+  }
+}

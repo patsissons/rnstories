@@ -1,0 +1,9 @@
+/ignore
+.cache/
+.expo/
+.vscode/.react/
+build/
+coverage/
+node_modules/
+*.log
+.env*

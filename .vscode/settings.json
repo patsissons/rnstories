@@ -1,0 +1,13 @@
+{
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.rulers": [ 80 ],
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "react-native.packager.port": 19001,
+  "react-native-storybooks.storyRegex": "storybook/stories/*.stories.*",
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}

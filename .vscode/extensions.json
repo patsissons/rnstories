@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "eg2.tslint",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "orta.vscode-react-native-storybooks",
+    "vsmobile.vscode-react-native",
+  ]
+}
